@@ -1,0 +1,24 @@
+extends layout
+
+block content
+    .header
+        .header-bg
+            .header-bg-pic
+        .pure-menu.pure-menu-open.pure-menu-horizontal
+            a.title.pure-menu-heading(href="/") Commitr
+
+            ul#Search
+                form.pure-form
+                    input.search-user(type=text, placeholder="Github username")
+                    span.search-seperator /
+                    input.search-repo(type=text, placeholder="Repository")
+                    button.search-submit.pure-button.pure-button-primary(type=submit) Commitrfy
+            
+            ul#nav
+                li
+                    a(href="#") About
+
+    
+    .pure-g-r
+        .pure-u-1-1.commit-box
+

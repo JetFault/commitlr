@@ -1,0 +1,32 @@
+{
+  "name": "commitr",
+  "version": "0.0.1",
+  "description": "Tumblr for Commits",
+  "main": "app.js",
+  "dependencies": {
+    "picture-tube": "~0.0.4",
+    "express": "~3.4.0",
+    "yui": "3.12.0",
+    "jade": "*"
+  },
+  "devDependencies": {},
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git://github.com/JetFault/commitr.git"
+  },
+  "keywords": [
+    "Tumblr",
+    "Commit",
+    "Git",
+    "Commitr",
+    "YUI",
+    "YQL",
+    "Yahoo"
+  ],
+  "author": "Jerry Reptak @jetfault",
+  "license": "BSD",
+  "readmeFilename": "README.md"
+}
