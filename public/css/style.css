@@ -15,6 +15,10 @@ a {
     box-sizing: border-box;
 }
 
+.pure-g-r {
+    letter-spacing: 0em;
+}
+
 .header {
     width: 100%;
     height: 60px;
@@ -52,14 +56,34 @@ a {
     padding-top: 10px;
 }
 
+.content {
+    padding-top: 70px;
+    width: 970px;
+    margin: auto;
+}
+
 .commit-box {
     padding: 1em;
+    background-color: lightgrey;
+    margin-bottom: 30px;
+    width: 100%;
 }
-.commit-box:hover {
+.commit-box:hover > commit-box-bg {
     -webkit-filter: blur(3px);
     -moz-filter: blur(3px);
     -o-filter: blur(3px);
     -ms-filter: blur(3px);
     filter: blur(3px);
 }
+
+.commit-sha{
+    float: right;
+}
+
+.commit-message {
+    display: block;
+    white-space: pre-wrap;
+    text-align: center;
+}
+
 

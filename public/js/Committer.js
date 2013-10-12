@@ -1,7 +1,7 @@
 YUI.add('commitlr-committer', function (Y) {
 
     function Committer(config) {
-        var self = {};
+        var self = this;
 
         self.name = config.name;
         self.email = config.email;
@@ -9,8 +9,6 @@ YUI.add('commitlr-committer', function (Y) {
         self.profilePic = config.profilePic;
         self.userURL_html = config.userURL_html;
         self.userURL_api = config.userURL_api;
-
-        return self;
     }
 
     Y.namespace("Commitlr").Committer = Committer;

@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title></title>
+    <link rel="stylesheet" href="http://yui.yahooapis.com/pure/0.3.0/pure-min.css">
+    <link rel="stylesheet" href="/css/style.css">
+    <script src="http://yui.yahooapis.com/3.13.0/build/yui/yui-min.js"></script>
+    <script src="/js/Committer.js"></script>
+    <script src="/js/Commit.js"></script>
+    <script src="/js/controller.js"></script>
+    <script src="/js/commitlr.js"></script>
+  </head>
+  <body>
+    <div class="header">
+      <div class="header-bg">
+        <div class="header-bg-pic"></div>
+      </div>
+      <div class="pure-menu pure-menu-open pure-menu-horizontal"><a href="/" class="title pure-menu-heading">Commitr</a>
+        <ul id="Search">
+          <form class="pure-form">
+            <input placeholder="Github username" class="search-user"><span class="search-seperator">/</span>
+            <input placeholder="Repository" class="search-repo">
+            <button class="search-submit pure-button pure-button-primary">Commitrfy</button>
+          </form>
+        </ul>
+        <ul id="nav">
+          <li><a href="#">About</a></li>
+        </ul>
+      </div>
+    </div>
+    <div class="content">
+    </div>
+    <script id="template-commitbox" type="text/x-handlebars-template">
+        <div class="pure-g-r">
+        <div class="commit-box pure-u-1-1" data-sha="{{commit.sha}}" style="background: lightgray url({{image}}) no-repeat center;">
+                <a class="commit-committer-username" href="{{commit.committer.userURL_html}}" target="_blank">{{commit.committer.username}}</a>
+                <a class="commit-sha" href="{{commit.commitURL_html}}" target="_blank">{{commit.sha}}</a>
+                <span class="commit-message">{{commit.message}}</span>
+                <a class="tumblog-url" href="{{tumblog.tumblog_html}}" target="_blank">Tumblr Post</a>
+                <div class="summary-keywords">
+                    {{#each keywords}}
+                    <span class="summary-keyword">{{this}}</span>
+                    {{/each}}
+                </div>
+            </div>
+        </div>
+    </script>
+  </body>
+</html>

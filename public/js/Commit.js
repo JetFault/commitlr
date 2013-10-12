@@ -1,7 +1,7 @@
 YUI.add('commitlr-commit', function (Y) {    
 
     function Commit(config) {
-        var self = {};
+        var self = this;
 
         self.sha = config.sha;
         self.message = config.message;
@@ -16,8 +16,6 @@ YUI.add('commitlr-commit', function (Y) {
             userURL_html    : config.committer.userURL_html,
             userURL_api     : config.committer.userURL_api
         });
-
-        return self;
     }
 
     Y.namespace("Commitlr").Commit = Commit;
