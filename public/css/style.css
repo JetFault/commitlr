@@ -64,16 +64,32 @@ a {
 
 .commit-box {
     padding: 1em;
-    background-color: lightgrey;
+    /*background-color: lightgrey;*/
     margin-bottom: 30px;
     width: 100%;
+    height: 300px;
+    position: relative;
 }
-.commit-box:hover > commit-box-bg {
-    -webkit-filter: blur(3px);
-    -moz-filter: blur(3px);
-    -o-filter: blur(3px);
-    -ms-filter: blur(3px);
-    filter: blur(3px);
+.commit-box:hover > .commitbox-bg {
+    -webkit-filter: blur(10px);
+    -moz-filter: blur(10px);
+    -o-filter: blur(10px);
+    -ms-filter: blur(10px);
+    filter: blur(10px);
+}
+
+.commitbox-bg {
+    background-size: 100%;
+    position: absolute;
+    height: 100%;
+    width: 100%;
+    z-index: -1;
+    margin: 0;
+    padding: 0;
+}
+
+.commitbox-content {
+    padding: 1em;
 }
 
 .commit-sha{
@@ -84,6 +100,8 @@ a {
     display: block;
     white-space: pre-wrap;
     text-align: center;
+    text-shadow: 0.1em 0.1em black;
+    color: white;
 }
 
 

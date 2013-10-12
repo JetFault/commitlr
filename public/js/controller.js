@@ -57,7 +57,6 @@ YUI().add('commitlr-controller', function (Y) {
                             }
                         });
 
-                        console.log(commit);
                         return commit;
                     });
 
@@ -82,8 +81,6 @@ YUI().add('commitlr-controller', function (Y) {
         message = Y.Escape.html(message);
         Y.YQL('select * from contentanalysis.analyze where ' +
               'text="' + message + '"', function(result) {
-
-            console.log(result);
 
             var keywords = [];
 
@@ -117,23 +114,28 @@ YUI().add('commitlr-controller', function (Y) {
         //tagURL = Y.Escape.html(tagURL);
         Y.YQL('select * from json where url="' + tagURL + '"', function(result) {
             result = result.query.results.json;
-            console.log(result);
 
-            var tumblrImages = [];
+            var tumblrImages;
 
             var tumblogs = result.response;
 
             //Didn't get a result, use longest word as keyword
             if(result.meta.status != 200 || !tumblogs || tumblogs.length < 1) {
-                tumblrImages = [''];
+                tumblrImages = ['/imgs/hackru.jpg'];
             } else {
-                tumblrImages = Y.Array.map(tumblogs, function(tumblog) {
+                tumblrImages = Y.Array.filter(tumblogs, function(tumblog) {
                     if (tumblog.type == 'photo') {
                         var img = getVal(tumblog.photos, ['original_size', 'url']);
-                        if(img) return img;
+                        if (img) {
+                            return img;
+                        }
                     }
                 });
             }
+
+            tumblrImages = Y.Array.map(tumblrImages, function(tumblog) {
+                return getVal(tumblog.photos, ['original_size', 'url']);
+            });
 
             cb(null, tumblrImages);
         });
@@ -146,5 +148,5 @@ YUI().add('commitlr-controller', function (Y) {
     ns.getTumblrFromTag = getTumblrFromTag;
 
 }, '1.0.0', {
-         requires: ['commitlr-commit', 'escape']
+         requires: ['commitlr-commit', 'escape', 'array-extras']
 });

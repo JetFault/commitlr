@@ -32,15 +32,18 @@
     </div>
     <script id="template-commitbox" type="text/x-handlebars-template">
         <div class="pure-g-r">
-        <div class="commit-box pure-u-1-1" data-sha="{{commit.sha}}" style="background: lightgray url({{image}}) no-repeat center;">
-                <a class="commit-committer-username" href="{{commit.committer.userURL_html}}" target="_blank">{{commit.committer.username}}</a>
-                <a class="commit-sha" href="{{commit.commitURL_html}}" target="_blank">{{commit.sha}}</a>
-                <span class="commit-message">{{commit.message}}</span>
-                <a class="tumblog-url" href="{{tumblog.tumblog_html}}" target="_blank">Tumblr Post</a>
-                <div class="summary-keywords">
-                    {{#each keywords}}
-                    <span class="summary-keyword">{{this}}</span>
-                    {{/each}}
+            <div class="commit-box pure-u-1-1" data-sha="{{commit.sha}}">
+                <div class="commitbox-bg" style="background: lightgray url({{image}}) no-repeat center; background-size: 100%;"></div>
+                <div class="commitbox-content">
+                    <a class="commit-committer-username" href="{{commit.committer.userURL_html}}" target="_blank">{{commit.committer.username}}</a>
+                    <a class="commit-sha" href="{{commit.commitURL_html}}" target="_blank">{{commit.sha}}</a>
+                    <span class="commit-message">{{commit.message}}</span>
+                    <a class="tumblog-url" href="{{tumblog.tumblog_html}}" target="_blank">Tumblr Post</a>
+                    <div class="summary-keywords">
+                        {{#each keywords}}
+                        <span class="summary-keyword">{{this}}</span>
+                        {{/each}}
+                    </div>
                 </div>
             </div>
         </div>
